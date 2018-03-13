@@ -1,0 +1,13 @@
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\Common.dll.config
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\Common.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\Common.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\BCrypt.Net.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\EntityFramework.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\BCrypt.Net.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\BCrypt.Net.xml
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\EntityFramework.xml
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\obj\Debug\Common.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\obj\Debug\Common.pdb
