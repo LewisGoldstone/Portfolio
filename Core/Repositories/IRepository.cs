@@ -43,12 +43,24 @@ namespace Core.Repositories
         TEntity GetById(int id);
 
         /// <summary>
-        /// Generic function to return matching records - not soft-deleted
+        /// Generic function to return matching records 
         /// </summary>
         /// <param name="predicate">lamba expression</param>
         /// <param name="orderBy">order by query</param>
+        /// <param name="includeDeleted">bool to include soft deletions</param>
         /// <returns>List<Entity></returns>
-        List<TEntity> Get(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null);
+        List<TEntity> Get(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false);
+
+        /// <summary>
+        /// Generic function to return matching records in a paged list
+        /// </summary>
+        /// <param name="page">Page number</param>
+        /// <param name="pageSize">Number of record returned</param>
+        /// <param name="predicate">lamba expression</param>
+        /// <param name="orderBy">order by query</param>
+        /// <param name="includeDeleted">bool to include soft deletions</param>
+        /// <returns>List<Entity></returns>
+        PagedList<TEntity> GetPagedList(int page, int pageSize, Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false);
 
         /// <summary>
         /// Call to commit changes

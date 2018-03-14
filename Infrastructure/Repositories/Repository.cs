@@ -1,4 +1,6 @@
-﻿using Core.Models;
+﻿using Common.Extensions;
+using Core;
+using Core.Models;
 using Core.Repositories;
 using System;
 using System.Collections.Generic;
@@ -47,18 +49,31 @@ namespace Infrastructure.Repositories
             return dbSet.Find(id);
         }
 
-        public List<TEntity> Get(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
+        private IQueryable<TEntity> GetQueryable(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
         {
             var query = dbSet.AsQueryable();
             if (predicate != null)
                 query = query.Where(predicate);
 
-            query = query.Where(i => i.IsDeleted == false);
+            if (includeDeleted == false)
+                query = query.Where(i => i.IsDeleted == false);
 
             if (orderBy != null)
                 query = orderBy(query);
 
-            return query.ToList();
+            return query;
+        }
+
+        public List<TEntity> Get(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
+        {
+            return this.GetQueryable(predicate, orderBy, includeDeleted).ToList();
+        }
+
+        public PagedList<TEntity> GetPagedList(int page, int pageSize, Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
+        {
+            return this.GetQueryable(predicate, orderBy, includeDeleted)
+
+                .ToPagedList(page, pageSize);
         }
 
         public void SaveChanges()
