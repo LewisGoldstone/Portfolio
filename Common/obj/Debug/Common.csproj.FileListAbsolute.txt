@@ -8,8 +8,5 @@ C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\BCrypt.Net.xml
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\EntityFramework.xml
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\obj\Debug\Common.dll
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Common\obj\Debug\Common.pdb
-C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Common\bin\Debug\Core.dll
-C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Common\bin\Debug\Core.pdb

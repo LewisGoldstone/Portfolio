@@ -1,5 +1,5 @@
-﻿using Common.Extensions;
-using Core;
+﻿using Core;
+using Core.Extensions;
 using Core.Models;
 using Core.Repositories;
 using System;
@@ -7,8 +7,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -49,7 +47,7 @@ namespace Infrastructure.Repositories
             return dbSet.Find(id);
         }
 
-        private IQueryable<TEntity> GetQueryable(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
+        private IQueryable<TEntity> GetQueryable(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
         {
             var query = dbSet.AsQueryable();
             if (predicate != null)
@@ -64,16 +62,19 @@ namespace Infrastructure.Repositories
             return query;
         }
 
-        public List<TEntity> Get(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
+        public List<TEntity> Get(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
         {
             return this.GetQueryable(predicate, orderBy, includeDeleted).ToList();
         }
 
-        public PagedList<TEntity> GetPagedList(int page, int pageSize, Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
+        public PagedList<TEntity> GetPagedList(Expression<Func<TEntity, bool>> predicate, int page, int pageSize, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
         {
-            return this.GetQueryable(predicate, orderBy, includeDeleted)
+            return this.GetQueryable(predicate, orderBy, includeDeleted).ToPagedList(page, pageSize);
+        }
 
-                .ToPagedList(page, pageSize);
+        public List<TEntity> GetAll(Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool includeDeleted = false)
+        {
+            return this.GetQueryable(null, orderBy, includeDeleted).ToList();
         }
 
         public void SaveChanges()

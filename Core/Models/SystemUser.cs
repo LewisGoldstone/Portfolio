@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Models
 {
-    public partial class SystemUser : PortfolioBase
+    public class SystemUser : PortfolioBase
     {
         [Required]
         public string FirstName { get; set; }
@@ -18,10 +18,5 @@ namespace Core.Models
 
         [ForeignKey("DisplayPictureId")]
         public virtual Media DisplayPicture { get; set; }
-
-        public SystemUser()
-        {
-            IsSuperUser = false;
-        }
     }
 }

@@ -11,16 +11,16 @@ namespace Service
 {
     public class DigitalPortfolioService : IDigitalPortfolioService
     {
-        private IRepository<DigitalPortfolio> _dpRepo;
+        private IRepository<DigitalPortfolio> _dpRepository;
 
-        public DigitalPortfolioService(IRepository<DigitalPortfolio> dpRepo)
+        public DigitalPortfolioService(IRepository<DigitalPortfolio> dpRepository)
         {
-            _dpRepo = dpRepo;
+            _dpRepository = dpRepository;
         }
 
         public DigitalPortfolio GetDigitalPortfolio(int id)
         {
-            return _dpRepo.GetById(id);
+            return _dpRepository.GetById(id);
         }
     }
 }

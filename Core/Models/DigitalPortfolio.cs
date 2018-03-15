@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Models
 {
-    public partial class DigitalPortfolio : PortfolioBase
+    public class DigitalPortfolio : PortfolioBase
     {
         public int SystemUserId { get; set; }
         public int ImageId { get; set; }

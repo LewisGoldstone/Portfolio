@@ -8,7 +8,6 @@ namespace Core.Models
         [Key]
         public int Id { get; set; }
         public bool IsDeleted { get; set; }
-        [Required]
         public DateTime Created { get; set; }
 
         public PortfolioBase()

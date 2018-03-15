@@ -3,38 +3,33 @@ using Core.Models;
 using Core.Repositories;
 using System.Collections.Generic;
 using System.Linq;
+using Core;
 
 namespace Service
 {
     public class ProjectService : IProjectService
     {
-        private IRepository<Project> _projectRepo;
+        private IRepository<Project> _projectRepository;
 
-        public ProjectService(IRepository<Project> projectRepo)
+        public ProjectService(IRepository<Project> projectRepository)
         {
-            _projectRepo = projectRepo;
+            _projectRepository = projectRepository;
         }
 
         public Project GetProject(int id)
         {
-            return _projectRepo.GetById(id);
+            return _projectRepository.GetById(id);
         }
 
         public List<Project> GetOrderedVisibleProjects(int systemUserId)
         {
-            var orderedResults = _projectRepo.Get(i => 
-                i.IsVisible 
-                && i.OrderBy != null, 
-                i => i.OrderBy(c => c.OrderBy));
+            var projects = _projectRepository.Get(i => i.IsVisible);
 
-            var dateOrdered = _projectRepo.Get(i => 
-                i.IsVisible 
-                && i.OrderBy == null, 
-                i => i.OrderByDescending(c => c.Created));
+            projects = projects.OrderBy(i => i.OrderBy == null)
+                .ThenBy(i => i.OrderBy)
+                .ThenBy(i => i.Created).ToList();
 
-            orderedResults.AddRange(dateOrdered);
-
-            return orderedResults;
+            return projects;
         }
     }
 }
