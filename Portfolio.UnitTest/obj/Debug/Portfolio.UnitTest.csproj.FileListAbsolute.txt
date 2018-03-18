@@ -105,3 +105,8 @@ C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTes
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTest\obj\Debug\Portfolio.UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTest\obj\Debug\Portfolio.UnitTest.dll
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTest\obj\Debug\Portfolio.UnitTest.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTest\bin\Debug\Portfolio.Cryptography.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTest\bin\Debug\BCrypt.Net.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTest\bin\Debug\Portfolio.Cryptography.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTest\bin\Debug\BCrypt.Net.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.UnitTest\bin\Debug\BCrypt.Net.xml

@@ -53,6 +53,7 @@ namespace Portfolio.IoC
             container.RegisterType<IProjectService, ProjectService>();
             container.RegisterType<IDigitalPortfolioService, DigitalPortfolioService>();
             container.RegisterType<IMediaService, MediaService>();
+            container.RegisterType<IAuthenticationService, IAuthenticationService>();
         }
     }
 }

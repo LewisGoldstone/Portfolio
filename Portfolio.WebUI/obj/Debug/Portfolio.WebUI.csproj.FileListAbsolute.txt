@@ -172,3 +172,8 @@ C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\b
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\obj\Debug\Portfolio.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\obj\Debug\Portfolio.WebUI.dll
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\obj\Debug\Portfolio.WebUI.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\bin\Portfolio.Cryptography.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\bin\BCrypt.Net.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\bin\Portfolio.Cryptography.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\bin\BCrypt.Net.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.WebUI\bin\BCrypt.Net.xml

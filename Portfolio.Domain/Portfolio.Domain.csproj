@@ -53,6 +53,7 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Services\IDigitalPortfolioService.cs" />
     <Compile Include="Services\IMediaService.cs" />
+    <Compile Include="Services\IAuthenticationService.cs" />
     <Compile Include="Services\IProjectService.cs" />
     <Compile Include="Services\ISystemUserService.cs" />
   </ItemGroup>

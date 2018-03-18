@@ -13,6 +13,13 @@ namespace Portfolio.UnitTest.Services
     [TestClass]
     public class ProjectServiceTests
     {
+        private readonly Mock<IRepository<Project>> _mockProjectRepo;
+
+        public ProjectServiceTests()
+        {
+            _mockProjectRepo = new Mock<IRepository<Project>>();
+        }
+
         [TestMethod]
         public void Ordered_Visible_Projects_OrderBy_Then_Created()
         {
@@ -50,7 +57,6 @@ namespace Portfolio.UnitTest.Services
                 orderedProjects[2], orderedProjects[0], orderedProjects[3], orderedProjects[1]
             };
 
-            var _mockProjectRepo = new Mock<IRepository<Project>>();
             _mockProjectRepo.Setup(m => m.Get(It.IsAny<Expression<Func<Project, bool>>>(), null, false))
                 .Returns(unOrderedProjects);
 
