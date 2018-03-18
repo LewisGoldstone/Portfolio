@@ -1,0 +1,52 @@
+﻿@using Portfolio.Models
+@using Portfolio.Global
+@model AccountUser
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 page-title-bar text-center">
+            <h1 id="page-title" class="page-title">Log in</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="loginForm" class="panel panel-login"> 
+                <div class="panel-dp">
+                    <a>
+                        <img src="@UserGenerate.BrandLogo()" alt="Brand image" />
+                    </a>
+                </div>
+                @using (Html.BeginForm("Index", "Login",  new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form", role = "form" }))
+                {
+                    <div class="panel-body">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="text-center">
+                            <input type="submit" value="Log in" class="btn btn-blue" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

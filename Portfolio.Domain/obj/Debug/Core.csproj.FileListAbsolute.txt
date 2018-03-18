@@ -1,0 +1,5 @@
+C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Core\bin\Debug\Core.dll
+C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Core\bin\Debug\Core.pdb
+C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Core\obj\Debug\Core.dll
+C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Core\obj\Debug\Core.pdb

@@ -1,0 +1,20 @@
+.row {
+    margin: 0 em(-15px);
+    &::before {
+        display: table;
+        content: " ";
+    }
+    &::after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+.col {
+    display: inline-block;
+    float: left;
+    padding: 0 em(15px);
+    width: 100%;
+    min-height: 1px;
+}

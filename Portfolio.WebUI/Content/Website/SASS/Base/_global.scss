@@ -1,0 +1,170 @@
+﻿*,
+*::after,
+*::before {
+    @include box-sizing(border-box);
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $bg-white;
+    font-family: $josefin-slab;
+    font-size: $base-font-size;
+    padding: 0;
+    margin: 0;
+    line-height: 1.4;
+    color: $text;
+    font-weight: 400;
+    font-style: normal;
+    height: 100%;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+//Padding equal to footer size
+.main-content {
+    padding-bottom: em(146px); 
+    @media (min-width: $screen-sm-min) {
+        padding-bottom: em(74px); 
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $josefin-slab-semi;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 15px;
+}
+
+.page-title {
+    font-family: $josefin-slab-semi;
+    text-align: center;
+    font-size: em(21px);
+    margin-top: 0;
+    position: relative;
+    @media (min-width: $screen-sm-min) {
+        font-size: em(26px);
+    }
+    @media (min-width: $screen-md-min) {
+        font-size: em(28px);
+    }
+}
+
+.title {
+    font-family: $josefin-slab-semi;
+    text-align: center;
+    font-size: em(21px);
+    margin-top: 0;
+    @media (min-width: $screen-sm-min) {
+        font-size: em(26px);
+    }
+}
+
+p {
+    font-family: $josefin-slab;
+    font-weight: 400;
+    font-style: normal;
+    font-size: em(13px);
+    @media (min-width: $screen-sm-min) {
+        font-size: em(16px);
+    }
+    @media (min-width: $screen-md-min) {
+        font-size: em(18px);
+    }
+}
+
+a {
+    font-family: $josefin-slab;
+    font-weight: 400;
+    font-style: normal;
+    color: $link;
+    text-decoration: none;
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+.main-content {
+    margin-top: em(60px);
+    @media (min-width: $screen-sm-min) {
+        margin-top: em(70px);
+    }
+    > .container {
+        position: relative;
+        padding: em(15px);
+        @media (min-width: $screen-sm-min) {
+            padding: em(30px);
+        }
+        @media (min-width: $screen-md-min) {
+            padding: em(50px);
+        }
+        &--home {
+            padding: 0 em(15px);
+            @media (min-width: $screen-sm-min) {
+                padding: 0 em(30px);
+            }
+            @media (min-width: $screen-md-min) {
+                padding: 0 em(50px);
+            }
+        }
+        &--project-top {
+            padding: em(15px) em(15px) 0;
+            display: table;
+            width: 100%;
+            max-width: em(1050px);
+            margin: auto;
+            @media (min-width: $screen-sm-min) {
+                padding: em(30px) em(30px) 0;
+            }
+            @media (min-width: $screen-md-min) {
+                padding: em(50px) em(50px) 0;
+            }
+        }
+        &--project-bottom {
+            padding:  0 em(15px) em(15px);
+            @media (min-width: $screen-sm-min) {
+                padding: 0 em(30px) em(30px);
+            }
+            @media (min-width: $screen-md-min) {
+                padding: 0 em(50px) em(50px);
+            }
+        }
+    }
+    .portfolio & {
+       @media (min-width: $screen-md-min) {
+            margin-top: 0;
+        }
+    }
+}
+
+.underline {
+    width: em(40px);
+    border-color: $pink;
+    border-style: solid;
+    margin: auto;
+    @media (min-width: $screen-sm-min) {
+        width: em(55px);
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.center-anything {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

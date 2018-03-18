@@ -1,0 +1,41 @@
+﻿.home-image-wrapper {
+    overflow: hidden;
+    position: relative;
+    max-height: em(512px);
+    @media (min-width: $screen-sm-min) {
+        max-height:initial;
+    }
+}
+
+.home-image {
+    max-width: em(767px);
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: em(-383.5px);
+    @media (min-width: $screen-sm-min) {
+        max-width: em(991px);
+        margin-left: em(-495.5px);
+    }
+    @media (min-width: $screen-md-min) {
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.latest-projects {
+    padding: em(30px) 0 em(15px);
+    @media (min-width: $screen-sm-min) {
+        padding: em(60px) 0 em(30px);
+    }
+    @media (min-width: $screen-md-min) {
+        padding: em(80px) 0 em(50px);
+    }
+}
+
+

@@ -1,0 +1,20 @@
+// Colours;
+$black: #111;
+$text: #333;
+$border-grey: #e6e6e6;
+$bg-white: #F1F5F4;
+$link: #337ab7;
+$pink: #ffc0cb;
+$grey: #c1c1c3;
+
+//Breakpoints
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+
+//Header Navigation
+$nav-font-xs: $josefin-slab;
+$nav-font-sm: $josefin-slab-semi;

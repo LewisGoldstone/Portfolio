@@ -1,0 +1,22 @@
+﻿@using Portfolio.Global
+<div class="header__container">
+    <a class="brand" href="@Url.Action("Index", "Home")">
+        <img src="@HtmlGenerate.Url("/Assets/Website/images/logo.png")" class="brand__image" />
+    </a>
+    <a class="nav-toggle js-toggle-class nav-toggle--portfolio" data-target="navbar" data-class="active">
+        <div class="nav-toggle__container">
+            <span class="nav-toggle__bar nav-toggle__bar--top"></span>
+            <span class="nav-toggle__bar nav-toggle__bar--middle"></span>
+            <span class="nav-toggle__bar nav-toggle__bar--bottom"></span>
+        </div>
+    </a>
+    <ul id="js-navbar" class="navbar">
+        <li class="navbar__item"><a href="@Url.Action("Index", "Digital-Portfolio")">Portfolio</a></li>
+        <li class="navbar__item"><a href="@Url.Action("Index", "Projects")">Projects</a></li>
+        @*
+        <li class="navbar__item"><a href="#">About</a></li>
+        <li class="navbar__item"><a href="#">Contact</a></li>
+        *@
+    </ul>
+</div>
+

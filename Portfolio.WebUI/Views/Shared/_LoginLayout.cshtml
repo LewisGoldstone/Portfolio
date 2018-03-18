@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    @Html.Partial("_HeadLogin")
+</head>
+<body>
+    <div id="main-wrapper">
+        <div id="main-content">
+            @RenderBody()
+        </div>
+    </div>
+    <!-- Scripts -->
+    @Scripts.Render("~/bundles/dashboard-js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

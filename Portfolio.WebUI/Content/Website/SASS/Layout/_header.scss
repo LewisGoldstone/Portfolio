@@ -1,0 +1,95 @@
+.header {
+    height: em(60px);
+    position: fixed;
+    border-bottom: 2px solid $border-grey;
+    background: $bg-white;
+    top: 0;
+    display:block;
+    width: 100%;
+    z-index: 9999;
+    @media (min-width: $screen-sm-min) {
+        height: em(70px);
+    }
+}
+
+.header--portfolio {
+    border-bottom: 0;
+    opacity: 0;
+    background-color: transparent;
+    @include transition(all .2s linear);
+    position: absolute;
+    left: 0;
+    right: 0;
+    &.active {
+        opacity: 1;
+    }
+    &.open {
+        opacity: 1;
+        background-color: $bg-white;
+        @media (min-width: $screen-sm-min) {
+            background-color: transparent;
+        }
+    }
+}
+
+.header__container {
+    position: relative;
+    padding: 0 em(15px);
+    &:before {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+    @media (min-width: $screen-sm-min) {
+        padding: 0 em(30px);
+    }
+    @media (min-width: $screen-md-min) {
+        padding: 0 em(50px);
+    }
+}
+
+.brand {
+    float: left;
+    //font-family: $julius-sans;
+    //font-size: em(21.5px);
+    //color: $text;
+    display: table-cell;
+    height: em(60px);
+    line-height: em(60px);
+    vertical-align: middle;
+    z-index: 9999;
+    @media (min-width: $screen-sm-min) {
+        //font-size: em(24px);
+        height: em(70px);
+        line-height: em(70px);
+        @include transition(all .2s linear);
+        &:hover,
+        &:focus,
+        &:active {
+            color: $grey;
+        }
+    }
+    @media (min-width: $screen-md-min) {
+        //font-size: em(26px);
+        height: em(70px);
+        line-height: em(70px);
+    }
+}
+
+.brand__image {
+    max-width: em(185px);
+    height: auto;
+    vertical-align:middle;
+    display: inline-block;
+    margin-bottom: 2px;
+    @media (min-width: $screen-sm-min) {
+        max-width: em(207px);
+    }
+    @media (min-width: $screen-md-min) {
+        max-width: em(225px);
+    }
+}

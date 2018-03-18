@@ -1,0 +1,19 @@
+@include font-face("JosefinSlab-Regular",
+         font-files("JosefinSlab-Regular.woff",
+                    "JosefinSlab-Regular.ttf",
+                    "JosefinSlab-Regular.svg", 
+                    "JosefinSlab-Regular.eot"));
+@include font-face("JosefinSlab-SemiBold",
+         font-files("JosefinSlab-SemiBold.woff",
+                    "JosefinSlab-SemiBold.ttf",
+                    "JosefinSlab-SemiBold.svg", 
+                    "JosefinSlab-SemiBold.eot"));
+@include font-face("JuliusSansOne-Regular",
+         font-files("JuliusSansOne-Regular.woff",
+                    "JuliusSansOne-Regular.ttf",
+                    "JuliusSansOne-Regular.svg", 
+                    "JuliusSansOne-Regular.eot"));
+
+$josefin-slab: "JosefinSlab-Regular";
+$josefin-slab-semi: "JosefinSlab-SemiBold";
+$julius-sans: "JuliusSansOne-Regular";

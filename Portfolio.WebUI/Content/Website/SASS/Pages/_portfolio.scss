@@ -1,0 +1,297 @@
+﻿.portfolio {
+    overflow: hidden;
+}
+
+.image-viewer {
+    height: 100%;
+    width: 100%;
+    display: table;
+    background-color: $bg-white;
+    z-index: 1;
+    @media (min-width: $screen-sm-min) {
+        top: em(70px);
+    }
+    @media (min-width: $screen-md-min) {
+        top: em(0px);
+    }
+    &.loading {
+        background: url("../../Common/images/loading.gif") center center no-repeat;
+        background-size: 50px 50px;
+        @media (min-width: $screen-sm-min) {
+             background-size: 60px 60px;
+        }
+        * {
+            opacity: 0;
+        }
+    }
+    * {
+        opacity: 1;
+        @include transition(opacity .4s linear);
+    }
+}
+.image-viewer__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: none;
+    width: 100%;
+    margin: auto;
+    background-color: $bg-white;
+    &.prev {
+        display: table-cell;
+        z-index: 10;
+    }
+    &.active {
+        z-index: 20;
+        display: table-cell;
+    }
+    &.next {
+        display: table-cell;
+        z-index: 30;
+    }
+}
+
+.image-viewer__image {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    @include transition(all .25s linear);
+    @media (min-width: $screen-md-min) {
+        @include transition(all .5s linear);
+    }
+    .prev & {
+        @include transform(scale(0.5));
+    }
+}
+
+.portfolio-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: em(60px);
+    line-height: em(60px);
+    z-index: 1000;
+    opacity: 0;
+    @include transition(all .2s linear);
+    @media (min-width: $screen-sm-min) {
+        height: em(70px);
+        line-height: em(70px);
+    }
+     &.active {
+        opacity: 1;
+    }
+}
+
+.portfolio-bottom__icon {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    text-decoration:none !important;
+    @include transition(all .2s linear);
+    color: $text;
+    cursor: pointer;
+    &:before {
+         font-family: 'FontAwesome';
+         position: relative;
+         display: inline-block;
+         width: 100%;
+         font-size: em(20px);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $grey;
+    }
+}
+
+.portfolio-bottom__icon--gallery {
+    left: em(15px);
+    opacity: 1;
+    @include transition(all .2s linear);
+    @media (min-width: $screen-sm-min) {
+        left: em(30px);
+    }
+    @media (min-width: $screen-md-min) {
+        left: em(50px);
+    }
+    &:before {
+        content: "\f009";
+        font-size: em(22px);
+    }
+    &.active {
+        opacity: 0;
+    }
+    span {
+        display: none;
+        color: $text;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        font-family: $josefin-slab-semi;
+        @media (min-width: $screen-sm-min) {
+            display: inline;
+            left: em(30px);
+        }
+        @media (min-width: $screen-md-min) {
+            font-size: em(19px);
+            left: em(30px, 19px);
+        }
+    }
+}
+
+.portfolio-bottom__icon--scroll {
+    width: em(20px);
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: initial;
+    &:before {
+        content: "\f103";
+        @include animation(bounce 1.5s infinite);
+        font-size: em(29px);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $text;
+    }
+}
+
+.portfolio-bottom__icon--pin {
+    right: em(15px);
+    @media (min-width: $screen-sm-min) {
+        right: em(30px);
+    }
+    @media (min-width: $screen-md-min) {
+        right: em(50px);
+    }
+    &:before {
+        content: "\f0d3";
+    }
+}
+
+.portfolio-bottom__icon--inst {
+    right: em(45px);
+    @media (min-width: $screen-sm-min) {
+        right: em(60px);
+    }
+    @media (min-width: $screen-md-min) {
+        right: em(80px);
+    }
+    &:before {
+        content: "\f16d";
+    }
+}
+
+.portfolio-gallery {
+    position: relative;
+    margin: 0 em(-15px);
+    @media (min-width: $screen-md-min) {
+        margin: 0;
+    }
+}
+
+.portfolio-gallery__item {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    height: em(142px);
+    width: em(142px);
+    padding: 0 em(15px);
+    margin-bottom: em(30px);
+    @media (min-width: $screen-sm-min) {
+        height: em(180px);
+        width: em(180px);
+    }
+    @media (min-width: $screen-md-min) {
+        height: em(200px);
+        width: em(200px);
+        padding: 0 em(25px);
+        margin-bottom: em(50px);
+    }
+}
+
+.portfolio-gallery__image-wrapper {
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.portfolio-gallery__image {
+    height: 100%;
+    width: auto;
+    display: inline-block;
+    margin: auto;
+}
+
+@-webkit-keyframes bounce {
+    from, to  {
+        top: -5px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    50% {
+        top: 5px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    100%  {
+        top: -5px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+}
+@keyframes bounce {
+    from, to  {
+        top: -5px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    50% {
+        top: 5px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    100%  {
+        top: -5px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    @-webkit-keyframes bounce {
+    from, to  {
+        top: -10px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    50% {
+        top: 10px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    100%  {
+        top: -10px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+}
+@keyframes bounce {
+    from, to  {
+        top: -10px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    50% {
+        top: 10px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    100%  {
+        top: -10px;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+}
+}
+
+
