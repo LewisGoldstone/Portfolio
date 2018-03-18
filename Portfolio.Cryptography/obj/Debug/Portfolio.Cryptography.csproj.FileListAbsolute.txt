@@ -1,0 +1,8 @@
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Cryptography\bin\Debug\Portfolio.Cryptography.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Cryptography\bin\Debug\Portfolio.Cryptography.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Cryptography\bin\Debug\BCrypt.Net.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Cryptography\bin\Debug\BCrypt.Net.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Cryptography\bin\Debug\BCrypt.Net.xml
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Cryptography\obj\Debug\Portfolio.Cryptography.csprojResolveAssemblyReference.cache
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Cryptography\obj\Debug\Portfolio.Cryptography.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Cryptography\obj\Debug\Portfolio.Cryptography.pdb
