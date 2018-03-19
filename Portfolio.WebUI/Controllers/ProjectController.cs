@@ -2,7 +2,7 @@
 
 namespace Portfolio.WebUI.Controllers
 {
-    public class ProjectController : Controller
+    public class ProjectController : ProjectBaseController
     {
         /*
         private IProjectRepository _projectRepository;

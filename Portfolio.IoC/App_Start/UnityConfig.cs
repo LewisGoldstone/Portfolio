@@ -2,8 +2,8 @@ using Portfolio.Domain.Repositories;
 using Portfolio.Domain.Services;
 using Portfolio.Infrastructure.Repositories;
 using Portfolio.Service;
+using Portfolio.Service.Services;
 using System;
-
 using Unity;
 
 namespace Portfolio.IoC
@@ -40,11 +40,6 @@ namespace Portfolio.IoC
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            // NOTE: To load from web.config uncomment the line below.
-            // Make sure to add a Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
-
-            // TODO: Register your type's mappings here.
             //Repositories
             container.RegisterType(typeof(IRepository<>), typeof(Repository<>));
 
@@ -53,7 +48,7 @@ namespace Portfolio.IoC
             container.RegisterType<IProjectService, ProjectService>();
             container.RegisterType<IDigitalPortfolioService, DigitalPortfolioService>();
             container.RegisterType<IMediaService, MediaService>();
-            container.RegisterType<IAuthenticationService, IAuthenticationService>();
+            container.RegisterType<IAuthenticationService, AuthenticationService>();
         }
     }
 }

@@ -1,41 +1,77 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
+using Portfolio.Domain.Services;
+using Portfolio.WebUI.ViewModels.Login;
+using System.Security.Claims;
 using System.Web.Mvc;
-using System.Web.Security;
 
 namespace Portfolio.WebUI.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : ProjectBaseController
     {
-        public LoginController() { }
+        private readonly IAuthenticationService _authenticationService;
 
-        //
+        public LoginController(IAuthenticationService authenticationService)
+        {
+            _authenticationService = authenticationService;
+        }
+
         // GET: /Login
         [AllowAnonymous]
         public ActionResult Index(string ReturnUrl)
         {
-            ViewBag.ReturnUrl = ReturnUrl;
-
-            return View();
+            var viewModel = new LoginViewModel(ReturnUrl);
+            return View(viewModel);
         }
 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(object accountUser, string ReturnUrl)
+        public ActionResult Index(LoginViewModel accountUser)
         {
             if (!ModelState.IsValid)
+                return View(accountUser);
+
+            var systemUser = _authenticationService.Verify(accountUser.Email, accountUser.Password);
+            if (systemUser == null)
             {
+                ModelState.AddModelError("", "Invalid email address or password");
                 return View(accountUser);
             }
 
+            var identity = new ClaimsIdentity
+            (
+                new[] 
+                {
+                    new Claim(ClaimTypes.Name, systemUser.FullName),
+                    new Claim(ClaimTypes.Email, systemUser.Email)
+                },
+                DefaultAuthenticationTypes.ApplicationCookie,
+                ClaimTypes.Name, 
+                ClaimTypes.Role
+            );
 
+            // Set roles for authorization attributes used throughout dashboard
+            foreach(var role in systemUser.Roles)
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Role, role.Name));
+            }
 
-            return RedirectToAction("Index", "Dashboard");   
+            AuthenticationManager.SignIn
+            (
+                new AuthenticationProperties
+                {
+                    IsPersistent = true
+                }, 
+                identity
+            );
+
+            return Redirect(accountUser.ReturnUrl);   
         }
 
         public ActionResult LogOut()
         {
-            FormsAuthentication.SignOut();
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
     }

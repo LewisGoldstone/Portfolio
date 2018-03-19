@@ -14,6 +14,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.IoC", "Portfolio.IoC\Portfolio.IoC.csproj", "{B043B09B-486A-439D-92D2-0E71A0709237}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.UnitTest", "Portfolio.UnitTest\Portfolio.UnitTest.csproj", "{B9D782CD-C2F0-408C-AECE-253D33A74540}"
+	ProjectSection(ProjectDependencies) = postProject
+		{26C4B6E7-2AEA-48C2-B82D-DCDAFB3A543E} = {26C4B6E7-2AEA-48C2-B82D-DCDAFB3A543E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Cryptography", "Portfolio.Cryptography\Portfolio.Cryptography.csproj", "{688C49E9-EC13-4D93-9AA2-5B45CB642C2A}"
 EndProject

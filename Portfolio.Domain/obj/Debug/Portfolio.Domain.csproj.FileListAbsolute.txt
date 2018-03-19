@@ -4,6 +4,5 @@ C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Core\obj\Debug\Po
 C:\Users\Lewis\documents\visual studio 2017\Projects\Portfolio\Core\obj\Debug\Portfolio.Domain.pdb
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Domain\bin\Debug\Portfolio.Domain.dll
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Domain\bin\Debug\Portfolio.Domain.pdb
-C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Domain\obj\Debug\Portfolio.Domain.csprojResolveAssemblyReference.cache
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Domain\obj\Debug\Portfolio.Domain.dll
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Domain\obj\Debug\Portfolio.Domain.pdb
