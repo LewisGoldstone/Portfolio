@@ -2,9 +2,8 @@
 
 namespace Portfolio.Domain.Models
 {
-    public class Role
+    public class Role : PortfolioBase
     {
-        public int Id { get; set; }
         public string Name { get; set; }
 
         public virtual IEnumerable<SystemUser> SystemUsers { get; set; }

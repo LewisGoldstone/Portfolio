@@ -22,3 +22,8 @@ C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrast
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrastructure\obj\Debug\Portfolio.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrastructure\obj\Debug\Portfolio.Infrastructure.dll
 C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrastructure\obj\Debug\Portfolio.Infrastructure.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrastructure\bin\Debug\Portfolio.Cryptography.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrastructure\bin\Debug\BCrypt.Net.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrastructure\bin\Debug\Portfolio.Cryptography.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrastructure\bin\Debug\BCrypt.Net.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Portfolio\Portfolio.Infrastructure\bin\Debug\BCrypt.Net.xml

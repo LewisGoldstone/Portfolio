@@ -2,6 +2,7 @@
 using Microsoft.Owin.Security;
 using Portfolio.Domain.Services;
 using Portfolio.WebUI.ViewModels.Login;
+using System.Linq;
 using System.Security.Claims;
 using System.Web.Mvc;
 
@@ -66,7 +67,16 @@ namespace Portfolio.WebUI.Controllers
                 identity
             );
 
-            return Redirect(accountUser.ReturnUrl);   
+            if (accountUser.ReturnUrl == "/" || accountUser.ReturnUrl.Contains("Login"))
+            {
+                if(systemUser.Roles.Any(i => i.Name == "Administrator"))
+                    return RedirectToAction("Index", "Home", new { area = "Admin", id = systemUser.Id });
+
+                if (systemUser.Roles.Any(i => i.Name == "User"))
+                    return RedirectToAction("Index", "Home", new { area = "Dashboard", id = systemUser.Id });
+            }
+
+            return Redirect(accountUser.ReturnUrl);
         }
 
         public ActionResult LogOut()

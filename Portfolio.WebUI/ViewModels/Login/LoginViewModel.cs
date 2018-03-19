@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Portfolio.WebUI.ViewModels.Login
 {
-    public class LoginViewModel
+    public class LoginViewModel : BaseViewModel
     {
         [Required]
         [DataType(DataType.EmailAddress)]

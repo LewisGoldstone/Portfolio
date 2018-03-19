@@ -53,6 +53,10 @@
     <Compile Include="Repositories\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Portfolio.Cryptography\Portfolio.Cryptography.csproj">
+      <Project>{688C49E9-EC13-4D93-9AA2-5B45CB642C2A}</Project>
+      <Name>Portfolio.Cryptography</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Portfolio.Domain\Portfolio.Domain.csproj">
       <Project>{9dcb28a6-5bc1-4057-a2c5-0504c27a1b7c}</Project>
       <Name>Portfolio.Domain</Name>

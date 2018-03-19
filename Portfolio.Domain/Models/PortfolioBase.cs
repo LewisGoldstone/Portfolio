@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Portfolio.Domain.Models
 {
-    public class PortfolioBase
+    public abstract class PortfolioBase
     {
         [Key]
         public int Id { get; set; }
