@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Portfolio.Domain.Services;
 using Moq;
-using Portfolio.WebUI.ViewModels.Login;
 using Portfolio.WebUI.Controllers;
 using Microsoft.Owin.Security;
 using Portfolio.Domain.Models;
@@ -9,11 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web.Mvc;
+using Portfolio.WebUI.Models.Login;
 
 namespace Portfolio.UnitTest.WebUI.Controllers
 {
     [TestClass]
-    public class LoginControllerTests : ProjectBaseControllerTests
+    public class LoginControllerTests : PortfolioBaseControllerTests
     {
         private readonly Mock<IAuthenticationManager> _mockAuthenticationManager;
         private readonly Mock<IAuthenticationService> _mockAuthenticationService;
@@ -142,7 +142,6 @@ namespace Portfolio.UnitTest.WebUI.Controllers
             // Assert
             Assert.IsNotNull(result);
             Assert.IsTrue(result.RouteValues.ContainsValue("Admin"));
-            Assert.IsTrue(result.RouteValues.ContainsValue(systemUser.Id));
         }
 
         [TestMethod]
@@ -181,7 +180,6 @@ namespace Portfolio.UnitTest.WebUI.Controllers
             // Assert
             Assert.IsNotNull(result);
             Assert.IsTrue(result.RouteValues.ContainsValue("Dashboard"));
-            Assert.IsTrue(result.RouteValues.ContainsValue(systemUser.Id));
         }
     }
 }

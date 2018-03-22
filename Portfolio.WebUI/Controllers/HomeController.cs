@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace Portfolio.WebUI.Controllers
 {
-    public class HomeController : ProjectBaseController
+    public class HomeController : PortfolioBaseController
     {
         private readonly IProjectService _projectService;
 

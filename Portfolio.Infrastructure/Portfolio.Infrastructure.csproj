@@ -50,7 +50,12 @@
     <Compile Include="PortfolioContext.cs" />
     <Compile Include="PortfolioInitialiser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\DigitalPortfolioRepository.cs" />
+    <Compile Include="Repositories\MediaRepository.cs" />
+    <Compile Include="Repositories\PortfolioBaseRepository.cs" />
+    <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\SystemUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Portfolio.Cryptography\Portfolio.Cryptography.csproj">

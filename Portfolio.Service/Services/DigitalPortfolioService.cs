@@ -6,16 +6,11 @@ namespace Portfolio.Service
 {
     public class DigitalPortfolioService : IDigitalPortfolioService
     {
-        private IRepository<DigitalPortfolio> _dpRepository;
+        private IDigitalPortfolioRepository _dpRepository;
 
-        public DigitalPortfolioService(IRepository<DigitalPortfolio> dpRepository)
+        public DigitalPortfolioService(IDigitalPortfolioRepository dpRepository)
         {
             _dpRepository = dpRepository;
-        }
-
-        public DigitalPortfolio GetDigitalPortfolio(int id)
-        {
-            return _dpRepository.GetById(id);
         }
     }
 }

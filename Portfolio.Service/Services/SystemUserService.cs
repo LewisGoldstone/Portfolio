@@ -7,21 +7,16 @@ namespace Portfolio.Service
 {
     public class SystemUserService : ISystemUserService
     {
-        private IRepository<SystemUser> _systemUserRepo;
+        private ISystemUserRepository _systemUserRepo;
 
-        public SystemUserService(IRepository<SystemUser> systemUserRepo)
+        public SystemUserService(ISystemUserRepository systemUserRepo)
         {
             _systemUserRepo = systemUserRepo;
         }
 
-        public SystemUser GetSystemUser(int id)
-        {
-            return _systemUserRepo.GetById(id);
-        }
-
         public SystemUser GetSystemUserByEmail(string email)
         {
-            return _systemUserRepo.Get(i => i.Email == email).SingleOrDefault();
+            return _systemUserRepo.GetSystemUserByEmail(email);
         }
     }
 }

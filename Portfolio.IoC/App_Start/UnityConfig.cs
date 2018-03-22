@@ -41,7 +41,11 @@ namespace Portfolio.IoC
         public static void RegisterTypes(IUnityContainer container)
         {
             //Repositories
-            container.RegisterType(typeof(IRepository<>), typeof(Repository<>));
+            container.RegisterType<IDigitalPortfolioRepository, DigitalPortfolioRepository>();
+            container.RegisterType<IMediaRepository, MediaRepository>();
+            container.RegisterType<IProjectRepository, ProjectRepository>();
+            container.RegisterType<IRoleRepository, RoleRepository>();
+            container.RegisterType<ISystemUserRepository, SystemUserRepository>();
 
             //Services
             container.RegisterType<ISystemUserService, SystemUserService>();

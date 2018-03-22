@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Portfolio.WebUI.ViewModels.Login
+namespace Portfolio.WebUI.Models.Login
 {
-    public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : PortfolioBaseViewModel
     {
         [Required]
         [DataType(DataType.EmailAddress)]

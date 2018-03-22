@@ -107,11 +107,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\MockingHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ProjectServiceTests.cs" />
     <Compile Include="Services\AuthenticationServiceTests.cs" />
+    <Compile Include="WebUI\Areas\Admin\Home\HomeControllerTests.cs" />
     <Compile Include="WebUI\Controllers\LoginControllerTests.cs" />
-    <Compile Include="WebUI\ProjectBaseControllerTests.cs" />
+    <Compile Include="WebUI\PortfolioBaseControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -134,6 +136,9 @@
       <Project>{26c4b6e7-2aea-48c2-b82d-dcdafb3a543e}</Project>
       <Name>Portfolio.WebUI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebUI\Areas\Dashboard\Home\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

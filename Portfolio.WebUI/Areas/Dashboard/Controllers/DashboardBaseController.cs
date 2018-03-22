@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Portfolio.WebUI.Controllers;
 using System.Web.Mvc;
 
 namespace Portfolio.WebUI.Areas.Dashboard.Controllers
 {
-    public class DashboardBaseController : Controller
+    [Authorize(Roles = "User")]
+    public class DashboardBaseController : PortfolioBaseController
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+
     }
 }

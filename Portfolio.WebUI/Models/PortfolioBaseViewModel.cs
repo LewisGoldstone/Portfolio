@@ -1,8 +1,8 @@
 ﻿using System.Security.Principal;
 
-namespace Portfolio.WebUI.ViewModels
+namespace Portfolio.WebUI.Models
 {
-    public abstract class BaseViewModel
+    public abstract class PortfolioBaseViewModel
     {
         public IIdentity CurrentUser { get; set; }
     }

@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using Portfolio.Domain.Services;
-using Portfolio.WebUI.ViewModels.Login;
+using Portfolio.WebUI.Models.Login;
 using System.Linq;
 using System.Security.Claims;
 using System.Web.Mvc;
 
 namespace Portfolio.WebUI.Controllers
 {
-    public class LoginController : ProjectBaseController
+    public class LoginController : PortfolioBaseController
     {
         private readonly IAuthenticationService _authenticationService;
 
@@ -44,6 +44,7 @@ namespace Portfolio.WebUI.Controllers
             (
                 new[] 
                 {
+                    new Claim(ClaimTypes.NameIdentifier, systemUser.Id.ToString()),
                     new Claim(ClaimTypes.Name, systemUser.FullName),
                     new Claim(ClaimTypes.Email, systemUser.Email)
                 },
@@ -70,10 +71,10 @@ namespace Portfolio.WebUI.Controllers
             if (accountUser.ReturnUrl == "/" || accountUser.ReturnUrl.Contains("Login"))
             {
                 if(systemUser.Roles.Any(i => i.Name == "Administrator"))
-                    return RedirectToAction("Index", "Home", new { area = "Admin", id = systemUser.Id });
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
 
                 if (systemUser.Roles.Any(i => i.Name == "User"))
-                    return RedirectToAction("Index", "Home", new { area = "Dashboard", id = systemUser.Id });
+                    return RedirectToAction("Index", "Home", new { area = "Dashboard" });
             }
 
             return Redirect(accountUser.ReturnUrl);

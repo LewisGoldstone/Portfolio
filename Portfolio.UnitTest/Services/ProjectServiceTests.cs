@@ -13,17 +13,18 @@ namespace Portfolio.UnitTest.Services
     [TestClass]
     public class ProjectServiceTests
     {
-        private readonly Mock<IRepository<Project>> _mockProjectRepo;
+        private readonly Mock<IProjectRepository> _mockProjectRepo;
 
         public ProjectServiceTests()
         {
-            _mockProjectRepo = new Mock<IRepository<Project>>();
+            _mockProjectRepo = new Mock<IProjectRepository>();
         }
 
         [TestMethod]
         public void Ordered_Visible_Projects_OrderBy_Then_Created()
         {
             // Arrange
+            int systemUserId = new Random().Next();
             var orderedProjects = new List<Project>
             {
                 new Project
@@ -57,12 +58,12 @@ namespace Portfolio.UnitTest.Services
                 orderedProjects[2], orderedProjects[0], orderedProjects[3], orderedProjects[1]
             };
 
-            _mockProjectRepo.Setup(m => m.Get(It.IsAny<Expression<Func<Project, bool>>>(), null, false))
+            _mockProjectRepo.Setup(m => m.GetVisibleProjectsBySystemUser(systemUserId))
                 .Returns(unOrderedProjects);
 
             // Act
             var results = new ProjectService(_mockProjectRepo.Object)
-                .GetOrderedVisibleProjects(1);
+                .GetOrderedVisibleProjects(systemUserId);
 
             // Assert
             Assert.IsTrue(results.SequenceEqual(orderedProjects));

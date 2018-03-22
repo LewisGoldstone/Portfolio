@@ -1,15 +1,15 @@
 ﻿using Microsoft.Owin.Security;
-using Portfolio.WebUI.ViewModels;
+using Portfolio.Domain.Security;
+using Portfolio.WebUI.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 
 namespace Portfolio.WebUI.Controllers
 {
-    public class ProjectBaseController : Controller
+    public class PortfolioBaseController : Controller
     {
         private IAuthenticationManager _authenticationManager;
         public IAuthenticationManager AuthenticationManager
@@ -24,12 +24,18 @@ namespace Portfolio.WebUI.Controllers
             }
         }
 
-        private IIdentity _currentUser;
-        public IIdentity CurrentUser
+        private IPortfolioIdentity _currentUser;
+        public IPortfolioIdentity CurrentUser
         {
             get
             {
-                return _currentUser ?? AuthenticationManager.User.Identity;
+                if(_currentUser == null && AuthenticationManager.User.Identity != null)
+                {
+                    var portfolioIdentity = (IPortfolioIdentity)AuthenticationManager.User.Identity;
+                    portfolioIdentity.Id = Convert.ToInt32(AuthenticationManager.User.Claims.Single(i => i.ValueType == ClaimTypes.NameIdentifier).Value);
+                }
+
+                return _currentUser;
             }
             set
             {
@@ -40,9 +46,9 @@ namespace Portfolio.WebUI.Controllers
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             var viewModel = filterContext.Controller.ViewData.Model;
-            if (viewModel.GetType().IsSubclassOf(typeof(BaseViewModel)))
+            if (viewModel.GetType().IsSubclassOf(typeof(PortfolioBaseViewModel)))
             {
-                ((BaseViewModel)viewModel).CurrentUser = CurrentUser;
+                ((PortfolioBaseViewModel)viewModel).CurrentUser = CurrentUser;
             }
 
             base.OnActionExecuted(filterContext);
