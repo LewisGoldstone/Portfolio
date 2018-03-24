@@ -1,9 +1,9 @@
-﻿using System.Security.Principal;
+﻿using Portfolio.Security.WebUI;
 
 namespace Portfolio.WebUI.Models
 {
     public abstract class PortfolioBaseViewModel
     {
-        public IIdentity CurrentUser { get; set; }
+        public PortfolioIdentity CurrentUser { get; set; }
     }
 }

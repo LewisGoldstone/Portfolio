@@ -1,4 +1,5 @@
 ﻿using Portfolio.Domain.Services;
+using Portfolio.WebUI.Areas.Dashboard.Models.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,8 @@ namespace Portfolio.WebUI.Areas.Dashboard.Controllers.Home
         // GET: Dashboard/Home
         public ActionResult Index()
         {
-            return View();
+            var viewModel = new HomeViewModel();
+            return View(viewModel);
         }
     }
 }

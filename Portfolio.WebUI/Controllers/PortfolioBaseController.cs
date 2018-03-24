@@ -1,5 +1,6 @@
-﻿using Microsoft.Owin.Security;
-using Portfolio.Domain.Security;
+﻿using Microsoft.Owin;
+using Microsoft.Owin.Security;
+using Portfolio.Security.WebUI;
 using Portfolio.WebUI.Models;
 using System;
 using System.Linq;
@@ -24,15 +25,14 @@ namespace Portfolio.WebUI.Controllers
             }
         }
 
-        private IPortfolioIdentity _currentUser;
-        public IPortfolioIdentity CurrentUser
+        private PortfolioIdentity _currentUser;
+        public PortfolioIdentity CurrentUser
         {
             get
             {
                 if(_currentUser == null && AuthenticationManager.User.Identity != null)
                 {
-                    var portfolioIdentity = (IPortfolioIdentity)AuthenticationManager.User.Identity;
-                    portfolioIdentity.Id = Convert.ToInt32(AuthenticationManager.User.Claims.Single(i => i.ValueType == ClaimTypes.NameIdentifier).Value);
+                    return new PortfolioIdentity(AuthenticationManager.User.Identity, AuthenticationManager.User.Claims);
                 }
 
                 return _currentUser;
@@ -45,13 +45,25 @@ namespace Portfolio.WebUI.Controllers
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            var viewModel = filterContext.Controller.ViewData.Model;
-            if (viewModel.GetType().IsSubclassOf(typeof(PortfolioBaseViewModel)))
+            var result = filterContext.Result as ViewResultBase;
+
+            if (result != null 
+                && result.Model != null
+                && result.Model.GetType().IsSubclassOf(typeof(PortfolioBaseViewModel)))
             {
-                ((PortfolioBaseViewModel)viewModel).CurrentUser = CurrentUser;
+                ((PortfolioBaseViewModel)result.Model).CurrentUser = CurrentUser;
             }
 
             base.OnActionExecuted(filterContext);
+        }
+
+        /// <summary>
+        /// This is used for unit testing OnActionExecuted due to its innaccessibility
+        /// </summary>
+        /// <param name="filterContext">Action Executed Context</param>
+        public void AccessOnActionExecuted(ActionExecutedContext filterContext)
+        {
+            OnActionExecuted(filterContext);
         }
     }
 }

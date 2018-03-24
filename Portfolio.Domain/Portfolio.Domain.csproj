@@ -48,7 +48,6 @@
     <Compile Include="Repositories\IProjectRepository.cs" />
     <Compile Include="Repositories\IRoleRepository.cs" />
     <Compile Include="Repositories\ISystemUserRepository.cs" />
-    <Compile Include="Security\IPortfolioIdentity.cs" />
     <Compile Include="Models\Media.cs" />
     <Compile Include="Models\PortfolioBase.cs" />
     <Compile Include="Models\Project.cs" />

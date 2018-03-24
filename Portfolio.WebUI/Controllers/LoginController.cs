@@ -45,7 +45,8 @@ namespace Portfolio.WebUI.Controllers
                 new[] 
                 {
                     new Claim(ClaimTypes.NameIdentifier, systemUser.Id.ToString()),
-                    new Claim(ClaimTypes.Name, systemUser.FullName),
+                    new Claim(ClaimTypes.Name, systemUser.FirstName),
+                    new Claim(ClaimTypes.Surname, systemUser.LastName),
                     new Claim(ClaimTypes.Email, systemUser.Email)
                 },
                 DefaultAuthenticationTypes.ApplicationCookie,

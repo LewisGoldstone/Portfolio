@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Portfolio.WebUI.Areas.Admin.Controllers.Home;
+using Portfolio.WebUI.Areas.Dashboard.Controllers.Home;
 using Portfolio.Domain.Services;
 using Moq;
 using Microsoft.Owin.Security;
@@ -9,10 +9,10 @@ using System.Web.Mvc;
 using Portfolio.Domain.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Portfolio.WebUI.Areas.Admin.Models.Home;
+using Portfolio.WebUI.Areas.Dashboard.Models.Home;
 using Portfolio.UnitTest.Extensions;
 
-namespace Portfolio.UnitTest.WebUI.Areas.Admin.Home
+namespace Portfolio.UnitTest.WebUI.Areas.Dashboard.Home
 {
     [TestClass]
     public class HomeControllerTests
@@ -49,7 +49,7 @@ namespace Portfolio.UnitTest.WebUI.Areas.Admin.Home
                 {
                     new Role
                     {
-                        Name = "Administrator"
+                        Name = "User"
                     }
                 }
             };

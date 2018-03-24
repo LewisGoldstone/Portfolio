@@ -17,7 +17,6 @@ namespace Portfolio.WebUI.Areas.Admin.Controllers.Home
             _systemUserService = systemUserService;
         }
 
-        [Authorize(Roles = "Administrator")]
         public ActionResult Index()
         {
             var viewModel = new HomeViewModel();

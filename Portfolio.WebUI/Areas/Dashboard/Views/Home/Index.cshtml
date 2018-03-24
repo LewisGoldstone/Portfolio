@@ -1,11 +1,13 @@
-﻿@{
-    ViewBag.Title = "Dashboard";
+﻿@model Portfolio.WebUI.Areas.Dashboard.Models.Home.HomeViewModel
+
+@{
+    ViewBag.Title = "Dashboard - " + Model.CurrentUser.FullName;
 }
 
 <div class="container">
     <div class="row">
         <div class="col-xs-12 page-title-bar">
-            <h2 class="pull-left page-title">Dashboard</h2>
+            <h2 class="pull-left page-title">Hello @Model.CurrentUser.FirstName</h2>
         </div>
     </div>
 </div>
