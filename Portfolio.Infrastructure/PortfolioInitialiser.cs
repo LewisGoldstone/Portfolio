@@ -8,15 +8,6 @@ namespace Portfolio.Infrastructure
 {
     public class PortfolioInitialiser : DropCreateDatabaseIfModelChanges<PortfolioContext>
     {
-        private readonly IRepository<SystemUser> _systemUserRepo;
-        private readonly IRepository<Role> _roleRepo;
-
-        public PortfolioInitialiser(IRepository<SystemUser> systemUserRepo, IRepository<Role> roleRepo)
-        {
-            _systemUserRepo = systemUserRepo;
-            _roleRepo = roleRepo;
-        }
-
         protected override void Seed(PortfolioContext context)
         {
             //Seed Roles
@@ -34,10 +25,10 @@ namespace Portfolio.Infrastructure
 
             foreach (var role in roles)
             {
-                _roleRepo.Insert(role);
+                context.Set<Role>().Add(role);
             }
 
-            _roleRepo.SaveChanges();
+            context.SaveChanges();
 
             //Seed System Users
             var systemUsers = new List<SystemUser>
@@ -68,10 +59,10 @@ namespace Portfolio.Infrastructure
 
             foreach(var systemUser in systemUsers)
             {
-                _systemUserRepo.Insert(systemUser);
+                context.Set<SystemUser>().Add(systemUser);
             }
 
-            _systemUserRepo.SaveChanges();
+            context.SaveChanges();
         }
     }
 }

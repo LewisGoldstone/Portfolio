@@ -11,7 +11,7 @@ namespace Portfolio.UnitTest.Extensions
     public static class ControllerExtensions
     {
         /// <summary>
-        /// Mock http context/identity
+        /// Mock http context/identity authentication
         /// </summary>
         /// <param name="controller">Controller where extends PortfolioBaseController</param>
         /// <param name="systemUserId">System User ID</param>

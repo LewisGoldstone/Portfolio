@@ -1,10 +1,11 @@
 ﻿using Portfolio.IoC;
-using Portfolio.WebUI;
+using System.Security.Claims;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Portfolio
+namespace Portfolio.WebUI
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -15,6 +16,8 @@ namespace Portfolio
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             UnityMvcActivator.Start();
+
+            AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
         }
     }
 }

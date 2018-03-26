@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -15,7 +15,9 @@
         </div>
     </div>
     <!-- Scripts -->
-    @Scripts.Render("~/bundles/dashboard-js")
+    @Scripts.Render("~/Scripts/jquery")
+    @Scripts.Render("~/Scripts/bootstrap")
+    @Scripts.Render("~/Scripts/Dashboard/main")
     @RenderSection("scripts", required: false)
 </body>
 </html>

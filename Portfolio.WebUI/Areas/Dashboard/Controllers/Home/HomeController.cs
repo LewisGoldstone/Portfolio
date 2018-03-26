@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Portfolio.WebUI.Areas.Dashboard.Controllers.Home
+namespace Portfolio.WebUI.Areas.Dashboard.Controllers
 {
     public class HomeController : DashboardBaseController
     {

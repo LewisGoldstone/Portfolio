@@ -10,6 +10,13 @@ namespace Portfolio.UnitTest.Helpers
 {
     public static class MockingHelpers
     {
+        /// <summary>
+        /// Initialise Action Executed Contextn for Action Executed base controller method 
+        /// </summary>
+        /// <typeparam name="TController">Controller where extends PortfolioBaseController<typeparam>
+        /// <param name="controller">Controller where extends PortfolioBaseController</param>
+        /// <param name="result">Action Result from controller method being called</param>
+        /// <returns>ActionExecutedContext</returns>
         public static ActionExecutedContext InitActionExecutedContext<TController>(TController controller, ActionResult result)
             where TController : PortfolioBaseController
         {

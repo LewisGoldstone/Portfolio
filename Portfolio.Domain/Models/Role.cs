@@ -6,6 +6,6 @@ namespace Portfolio.Domain.Models
     {
         public string Name { get; set; }
 
-        public virtual IEnumerable<SystemUser> SystemUsers { get; set; }
+        public virtual ICollection<SystemUser> SystemUsers { get; set; }
     }
 }

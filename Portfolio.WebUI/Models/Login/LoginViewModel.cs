@@ -22,6 +22,8 @@ namespace Portfolio.WebUI.Models.Login
 
         public string ReturnUrl { get; set; }
 
+        public LoginViewModel() { }
+
         public LoginViewModel(string returnUrl)
         {
             ReturnUrl = returnUrl;

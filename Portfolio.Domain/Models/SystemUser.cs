@@ -18,7 +18,7 @@ namespace Portfolio.Domain.Models
 
         [ForeignKey("DisplayPictureId")]
         public virtual Media DisplayPicture { get; set; }
-        public virtual IEnumerable<Role> Roles { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
 
         [NotMapped]
         public string FullName

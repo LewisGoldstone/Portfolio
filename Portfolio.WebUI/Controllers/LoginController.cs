@@ -69,7 +69,9 @@ namespace Portfolio.WebUI.Controllers
                 identity
             );
 
-            if (accountUser.ReturnUrl == "/" || accountUser.ReturnUrl.Contains("Login"))
+            if (accountUser.ReturnUrl == null 
+                || accountUser.ReturnUrl == "/" 
+                || accountUser.ReturnUrl.Contains("Login"))
             {
                 if(systemUser.Roles.Any(i => i.Name == "Administrator"))
                     return RedirectToAction("Index", "Home", new { area = "Admin" });

@@ -1,12 +1,8 @@
 ﻿using Portfolio.Domain.Services;
 using Portfolio.WebUI.Areas.Admin.Models.Home;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace Portfolio.WebUI.Areas.Admin.Controllers.Home
+namespace Portfolio.WebUI.Areas.Admin.Controllers
 {
     public class HomeController : AdminBaseController
     {

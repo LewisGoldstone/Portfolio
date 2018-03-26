@@ -1,6 +1,4 @@
-﻿@using Portfolio.Models
-@using Portfolio.Global
-@model AccountUser
+﻿@model Portfolio.WebUI.Models.Login.LoginViewModel
 
 @{
     ViewBag.Title = "Login";
@@ -14,16 +12,17 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div id="loginForm" class="panel panel-login"> 
+            <div id="loginForm" class="panel panel-login">
                 <div class="panel-dp">
                     <a>
-                        <img src="@UserGenerate.BrandLogo()" alt="Brand image" />
+                        <img src="" alt="Brand image" />
                     </a>
                 </div>
-                @using (Html.BeginForm("Index", "Login",  new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form", role = "form" }))
+                @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form", role = "form" }))
                 {
                     <div class="panel-body">
                         @Html.AntiForgeryToken()
+                        @Html.HiddenFor(m => m.ReturnUrl)
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="col-xs-12">
                             <div class="form-group">

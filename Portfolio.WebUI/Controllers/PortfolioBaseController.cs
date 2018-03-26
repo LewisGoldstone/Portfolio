@@ -30,7 +30,9 @@ namespace Portfolio.WebUI.Controllers
         {
             get
             {
-                if(_currentUser == null && AuthenticationManager.User.Identity != null)
+                if(_currentUser == null 
+                    && AuthenticationManager.User.Identity.IsAuthenticated
+                    && AuthenticationManager.User.Identity != null)
                 {
                     return new PortfolioIdentity(AuthenticationManager.User.Identity, AuthenticationManager.User.Claims);
                 }
